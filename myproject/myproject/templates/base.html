@@ -1,0 +1,1155 @@
+{% load cms_tags menu_tags sekizai_tags static i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+    <title>National Institute of Technology Warangal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&amp;display=swap">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+    {% render_block 'css' %}
+
+    {% if request.toolbar and request.toolbar.edit_mode_active %}
+    <script>
+        CMS.$(window).on('cms-content-refresh', function () {
+            less.refresh();
+        });
+    </script>
+    {% endif %}
+
+</head>
+
+<body>
+    {% cms_toolbar %}
+
+
+
+    <!-- Start Marquee -->
+    <div class="marquee_area">
+        <marquee>
+            <a>
+                {% block marquee2 %}
+                {% placeholder "marquee2" %}
+                {% endblock marquee2 %}
+            </a>
+        </marquee>
+    </div>
+    <!-- End Marquee -->
+
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg " id="nitw_nav_top">
+        <div class="container">
+
+            {% block TopNavigation %}
+            {% placeholder "TopNavigation" %}
+            {% endblock TopNavigation %}
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+    <!--Start Header Main Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light shadow main-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                {% block Logo %}
+                {% placeholder "Logo" %}
+                {% endblock Logo %}
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between align-self-center"
+                id="navbarSupportedContent">
+                <div class="flex-fill">
+
+                    {% block MainNavigation %}
+                    {% placeholder "MainNavigation" %}
+                    {% endblock MainNavigation %}
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Header Main Navigation-->
+
+    <!-- Start Main Banner -->
+    <div id="main-carousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#main-carousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#main-carousel" data-bs-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row ">
+                    <div class="mx-auto col-md-12 col-lg-12">
+                        {% block content_mainslider1 %}
+                        {% placeholder "Content_mainslider1" %}
+                        {% endblock content_mainslider1 %}
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row ">
+                    <div class="mx-auto col-md-12 col-lg-12">
+                        {% block content_mainslider2 %}
+                        {% placeholder "Content_mainslider2" %}
+                        {% endblock content_mainslider2 %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#main-carousel" role="button"
+            data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#main-carousel" role="button"
+            data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </div>
+    <!-- End Main Banner -->
+
+    {% block content %}
+    {% placeholder "Content" %}
+    {% endblock content %}
+
+
+
+    <!-- Start News & Events -->
+    <section class="nit-section">
+        <div class="container">
+            <div class="row align-items-center header-row">
+                <div class="col-lg-6 col-6">
+                    <h1 class="section_heading">News & Upcoming Events</h1>
+                </div>
+                <div class="col-lg-6 col-6">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="" class="btn btn-danger">ALL NEWS <i class="fa fa-angle-right"
+                                aria-hidden="true"></i></a>
+                        <a href="" class="btn btn-danger">MEDIA RELEASES <i class="fa fa-angle-right"
+                                aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <div id="news-slider9" class="owl-carousel">
+
+
+                        <div class="post-slide9">
+                            <div class="card h-100 nitw-card">
+                                <div class="card-img">
+                                    {% block News&EventsCardimg1 %}
+                                    {% placeholder "News&EventsCardimg1" %}
+                                    {% endblock News&EventsCardimg1 %}
+
+                                </div>
+                                <div class="card-body">
+
+
+                                    {% block News&EventsCardTitle1 %}
+                                    {% placeholder "News&EventsCardTitle1" %}
+                                    {% endblock News&EventsCardTitle1 %}
+
+
+
+
+                                    <a class="more" href="#">Explore <i class="fa fa-external-link"
+                                            aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class=" post-slide9">
+
+                            <div class="card h-100 nitw-card">
+                                <div class="card-img">
+                                    {% block News&EventsCardimg2 %}
+                                    {% placeholder "News&EventsCardimg2" %}
+                                    {% endblock News&EventsCardimg2 %}
+
+
+                                </div>
+                                <div class="card-body">
+
+
+                                    {% block News&EventsCardTitle2 %}
+                                    {% placeholder "News&EventsCardTitle2" %}
+                                    {% endblock News&EventsCardTitle2 %}
+
+                                    <a class="more" href="#">Explore <i class="fa fa-external-link"
+                                            aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="post-slide9">
+                            <div class="card h-100 nitw-card">
+                                <div class="card-img">
+                                    {% block News&EventsCardimg3 %}
+                                    {% placeholder "News&EventsCardimg3" %}
+                                    {% endblock News&EventsCardimg3 %}
+                                </div>
+                                <div class="card-body">
+                                    {% block News&EventsCardTitle3 %}
+                                    {% placeholder "News&EventsCardTitle3" %}
+                                    {% endblock News&EventsCardTitle3 %}
+                                    <a class="more" href="#">Explore <i class="fa fa-external-link"
+                                            aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="post-slide9">
+                            <div class="card h-100 nitw-card">
+                                <div class="card-img">
+                                    {% block News&EventsCardimg4 %}
+                                    {% placeholder "News&EventsCardimg4" %}
+                                    {% endblock News&EventsCardimg4 %}
+
+                                </div>
+                                <div class="card-body">
+                                    {% block News&EventsCardTitle4 %}
+                                    {% placeholder "News&EventsCardTitle4" %}
+                                    {% endblock News&EventsCardTitle4 %}
+                                    <a class="more" href="#"> Explore <i class="fa fa-external-link"
+                                            aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End News & Events -->
+
+    <!-- Start Director's Message -->
+    <section class="director_msg-section">
+        <div class="container">
+            <div class="row  align-items-center">
+                <div class="col-md-8">
+                    <h1 class="mb-4">Director's Message</h1>
+
+                    {% block Dirmsg %}
+                    {% placeholder "Dirmsg" %}
+                    {% endblock Dirmsg %}
+
+                </div>
+                <div class="col-md-4 text-center">
+                    {% block Dirimg %}
+                    {% placeholder "Dirimg" %}
+                    {% endblock Dirimg %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Director's Message -->
+
+    <!-- Start Numbers Section -->
+    <section class="counter-section nit-section">
+        <div id="counter">
+            <div class="container">
+
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="section_heading ranking-header">Rankings <span class="nirf-year">NIRF-2023</span>
+                        </h1>
+
+                    </div>
+                </div>
+
+
+                {% block NIRF_RANKING %}
+                {% placeholder "NIRF_RANKING" %}
+                {% endblock NIRF_RANKING %}
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="section_heading ranking-header" style="border-bottom:0px">NIT Warangal <span
+                                class="nirf-year"> by the Numbers</span>
+                        </h1>
+
+                    </div>
+                </div>
+
+
+
+                {% block NITW_NUMBERS %}
+                {% placeholder "NITW_NUMBERS" %}
+                {% endblock NITW_NUMBERS %}
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+    <!-- End Numbers Section -->
+
+
+    <!-- Start Latest research Message -->
+    <section class="research-section nit-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8">
+
+                    <div class="row align-items-center header-row">
+                        <div class="col-md-8 col-8">
+                            <h1 class="section_heading">Latest research</h1>
+                        </div>
+
+
+                        <div class="col-md-4 col-4">
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <a href="" class="btn btn-danger">View all <i class="fa fa-angle-right"
+                                        aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div id="news-slider13" class="owl-carousel">
+                            <div class="post-slide13">
+                                <div class="card h-100 research-card ">
+                                    <div class="card-img">
+                                        {% block LatestResearchimg1 %}
+                                        {% placeholder "LatestResearchimg1" %}
+                                        {% endblock LatestResearchimg1 %}
+                                    </div>
+                                    <div class="card-body">
+                                        {% block LatestResearchContent1 %}
+                                        {% placeholder "LatestResearchContent1" %}
+                                        {% endblock LatestResearchContent1 %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="post-slide13">
+                                <div class="card h-100 research-card">
+                                    <div class="card-img">
+                                        {% block LatestResearchimg2 %}
+                                        {% placeholder "LatestResearchimg2" %}
+                                        {% endblock LatestResearchimg2 %}
+                                    </div>
+                                    <div class="card-body">
+                                        {% block LatestResearchContent2 %}
+                                        {% placeholder "LatestResearchContent2" %}
+                                        {% endblock LatestResearchContent2 %}
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="post-slide13">
+                                <div class="card h-100 research-card">
+                                    <div class="card-img">
+                                        {% block LatestResearchimg3 %}
+                                        {% placeholder "LatestResearchimg3" %}
+                                        {% endblock LatestResearchimg3 %}
+                                    </div>
+                                    <div class="card-body">
+                                        {% block LatestResearchContent3 %}
+                                        {% placeholder "LatestResearchContent3" %}
+                                        {% endblock LatestResearchContent3 %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-4">
+                    <div class="row align-items-center header-row">
+                        <div class="col-lg-9 col-8">
+                            <h1 class="section_heading">PhD Seminars</h1>
+                        </div>
+                        <div class="col-lg-3 col-4">
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <a href="" class="btn btn-danger">View all <i class="fa fa-angle-right"
+                                        aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div id="news-slider999" class="owl-carousel">
+
+                            <div class="post-slide999">
+                                <div class="card h-100 seminars-card">
+                                    <div class="card-img">
+                                        {% block PhdSeminarimg1 %}
+                                        {% placeholder "PhdSeminarimg1" %}
+                                        {% endblock PhdSeminarimg1 %}
+                                    </div>
+                                    <div class="card-body">
+                                        {% block PhdSeminarContent1 %}
+                                        {% placeholder "PhdSeminarContent1" %}
+                                        {% endblock PhdSeminarContent1 %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="post-slide999">
+                                <div class="card h-100 seminars-card">
+                                    <div class="card-img">
+                                        {% block PhdSeminarimg2 %}
+                                        {% placeholder "PhdSeminarimg2" %}
+                                        {% endblock PhdSeminarimg2 %}
+                                    </div>
+                                    <div class="card-body">
+                                        {% block PhdSeminarContent2 %}
+                                        {% placeholder "PhdSeminarContent2" %}
+                                        {% endblock PhdSeminarContent2 %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Letest research section -->
+
+
+
+    <!-- Start Admission Section -->
+    <section class="admission-section nit-section">
+        <div class="container">
+            <div class="row  align-items-center admission-section-intro">
+                <div class="col-md-7">
+                    <h1 class="mb-2">Admissions</h1>
+                    
+
+                                        {% block Admissions_Intro %}
+                                        {% placeholder "Admissions_Intro" %}
+                                        {% endblock Admissions_Intro %}
+                        
+                   
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Admission Section -->
+
+    <!-- Start Admission Info Section -->
+    <section class="nit-section adm-main">
+        <div class="container">
+
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="logo-grid">
+                        <div class="adm-logo"><a href="#" target="_blank"><img
+                                    src="{% static 'assets/img/adm-logos/josaa_2023-5-16-15-21-43.png' %}"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="adm-logo"><a href="#" target="_blank"><img
+                                    src="{% static 'assets/img/adm-logos/csab_2023-5-16-16-8-43.png' %}"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="adm-logo"><a href="#" target="_blank"><img
+                                    src="{% static 'assets/img/adm-logos/dasa_2023-5-16-16-3-48.png' %}"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="adm-logo"><a href="#" target="_blank"><img
+                                    src="{% static 'assets/img/adm-logos/ccmt_2023-5-16-16-4-42.png' %}"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="adm-logo"><a href="#" target="_blank"><img
+                                    src="{% static 'assets/img/adm-logos/ccmn_2023-5-16-16-5-25.png' %}"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="adm-logo"><a href="#" target="_blank"><img
+                                    src="{% static 'assets/img/adm-logos/iccr_v5_2023-5-21-12-51-11.png' %}"
+                                    class="img-fluid" alt=""></a></div>
+                        <div class="adm-logo"><a href="#" target="_blank"><img
+                                    src="{% static 'assets/img/adm-logos/nimcet_v2_2023-5-21-12-53-10.png' %}"
+                                    class="img-fluid" alt=""></a></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row admission-enquiry">
+                <div class="col-lg-3">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">B.Tech <a class="more" href="#" style="float: right;">EXPLORE <i
+                                    class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                        <li class="list-group-item">M.Tech <a class="more" href="#" style="float: right;">EXPLORE <i
+                                    class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                        <li class="list-group-item">MCA <a class="more" href="#" style="float: right;">EXPLORE <i
+                                    class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                        <li class="list-group-item">MBA <a class="more" href="#" style="float: right;">EXPLORE <i
+                                    class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                        <li class="list-group-item">MSc <a class="more" href="#" style="float: right;">EXPLORE <i
+                                    class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                        <li class="list-group-item">PhD <a class="more" href="#" style="float: right;">EXPLORE <i
+                                    class="fa fa-external-link" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-9">
+                    {% block AdmissionEnquiry %}
+                    {% placeholder "AdmissionEnquiry" %}
+                    {% endblock AdmissionEnquiry %}
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+    <!-- End Admission Info Section -->
+
+
+    <!-- <section class="mt-0 align-items-center d-flex bg-dark admission-section-more-details">
+    <div class="container-fluid">
+       <div class="row  justify-content-center align-items-center d-flex text-center">
+         <div class="col-12 col-md-8">
+             <h5 class="lead">LEARN MORE ABOUT</h5>
+             <h3 class="mb-2">ADMISSIONS & HOW TO APPLY </h3>        
+         </div>
+       </div>
+     </div>
+</section> -->
+
+    <!-- <div class="container divider">
+    <hr />
+</div> -->
+
+
+    <!-- Start Notice Section -->
+    <section class="nit-section">
+        <div class="container">
+            <div class="row align-items-center header-row">
+                <div class="col-lg-6 col-8">
+                    <h1 class="section_heading">Notices</h1>
+                </div>
+                <div class="col-lg-6 col-4">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="" class="btn btn-danger">View all <i class="fa fa-angle-right"
+                                aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="row">
+
+
+                <div class="col-md-6 mb-3">
+                    {% block Notice1 %}
+                    {% placeholder "Notice1" %}
+                    {% endblock Notice1 %}
+                </div>
+
+
+
+                <div class="col-md-6 mb-3">
+                    {% block Notice2 %}
+                    {% placeholder "Notice2" %}
+                    {% endblock Notice2 %}
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+                    {% block Notice3 %}
+                    {% placeholder "Notice3" %}
+                    {% endblock Notice3 %}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    {% block Notice4 %}
+                    {% placeholder "Notice4" %}
+                    {% endblock Notice4 %}
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+                    {% block Notice5 %}
+                    {% placeholder "Notice5" %}
+                    {% endblock Notice5 %}
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+                    {% block Notice6 %}
+                    {% placeholder "Notice6" %}
+                    {% endblock Notice6 %}
+                </div>
+
+
+
+
+
+            </div>
+    </section>
+    <!-- End Notice Section -->
+
+    <div class="container divider">
+        <hr />
+    </div>
+
+    <!-- Start Placements Section -->
+    <section class="nit-section">
+        <div class="container">
+
+            <div class="row header-row">
+                <div class="col-lg-12">
+                    <h1 class="section_heading">Placements</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    {% block Placements %}
+                    {% placeholder "Placements" %}
+                    {% endblock Placements %}
+
+
+                </div>
+
+                <div class="col-lg-6">
+                    {% block PlacementsImage %}
+                    {% placeholder "PlacementsImage" %}
+                    {% endblock PlacementsImage %}
+
+                    <!-- <img src="{% static 'assets/img/placement-slideshow-1.jpg' %}" class="img-fluid" alt=""> -->
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- End Placements Section -->
+
+    <div class="container divider">
+        <hr />
+    </div>
+    <!-- Start Workshop Section -->
+    <section class="nit-section">
+        <div class="container">
+
+            <div class="row  align-items-center header-row">
+                <div class="col-lg-8 col-6">
+                    <h1 class="section_heading">Workshops/ Conferences/ Seminars</h1>
+
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="" class="btn btn-danger">View all events <i class="fa fa-angle-right"
+                                aria-hidden="true"></i></a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+
+                <div class="col-md-12">
+                    <div id="news-slider10" class="owl-carousel">
+
+                        <div class="post-slide10">
+                            {% block Workshop1 %}
+                            {% placeholder "Workshop1" %}
+                            {% endblock Workshop1 %}
+                        </div>
+
+
+
+                        <div class="post-slide10">
+                            {% block Workshop2 %}
+                            {% placeholder "Workshop2" %}
+                            {% endblock Workshop2 %}
+                        </div>
+
+
+
+                        <div class="post-slide10">
+
+                            {% block Workshop3 %}
+                            {% placeholder "Workshop3" %}
+                            {% endblock Workshop3 %}
+
+                        </div>
+
+
+
+                        <div class="post-slide10">
+                            {% block Workshop4 %}
+                            {% placeholder "Workshop4" %}
+                            {% endblock Workshop4 %}
+
+                        </div>
+
+                        <div class="post-slide10">
+                            {% block Workshop5 %}
+                            {% placeholder "Workshop5" %}
+                            {% endblock Workshop5 %}
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- End Workshop Section -->
+
+    <!-- Start Campus Life Section -->
+    <section class="nit-section">
+        <div class="container">
+
+            <div class="row  align-items-center header-row">
+                <div class=" col-md-5">
+                    <h1 class="section_heading">Campus Life</h1>
+
+                </div>
+
+                <div class=" col-md-7">
+                    <p>At NITW, you'll do more of what you love — and discover unique ways to combine newfound passions.
+                        Want to see how? </p>
+                    <a class="more" href="#">LEARN MORE ></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="accordian">
+                        <ul>
+                            <li>
+                                <div class="image_title">
+                                    <a href="#">Republic Day Celebration</a>
+                                </div>
+                                <img src="{% static 'assets/img/Republic_Day_Celebration_2024-1-27-11-42-14.jpg' %}"
+                                    alt="">
+                            </li>
+
+                            <li>
+                                <div class="image_title">
+                                    <a href="#">65th Foundation Day</a>
+                                </div>
+                                <img src="{% static 'assets/img/65th_Foundation_Day_2023-10-17-20-26-6.jpg' %}" alt="">
+                            </li>
+
+                            <li>
+                                <div class="image_title">
+                                    <a href="#">Endowment Awards Presentation Ceremony 2023</a>
+                                </div>
+                                <img src="{% static 'assets/img/Endowment-Gold-Medals-and-Cash-Prizes.jpg' %}" alt="">
+                            </li>
+
+
+                            <li>
+                                <div class="image_title">
+                                    <a href="#">21st Convocation 2023</a>
+                                </div>
+                                <img src="{% static 'assets/img/21st_Convocation_2023_t1_2023-10-3-11-34-42.jpg' %}"
+                                    alt="">
+                            </li>
+
+
+                            <li>
+                                <div class="image_title">
+                                    <a href="#">Bathukamma Festival in the campus</a>
+                                </div>
+                                <img src="{% static 'assets/img/Bathukamma_Festival_in_the_campus_2023-6-21-17-33-15.jpg' %}"
+                                    alt="">
+                            </li>
+
+                            <li>
+                                <div class="image_title">
+                                    <a href="#">Women’s day</a>
+                                </div>
+                                <img src="{% static 'assets/img/Women’s_day_2023-6-17-11-19-0.jpg' %}" alt="">
+                            </li>
+
+                            <li>
+                                <div class="image_title">
+                                    <a href="#">Mega Blood Donation Camp</a>
+                                </div>
+                                <img src="{% static 'assets/img/Mega_Blood_Donation_Camp_2023-6-17-11-22-12.jpg' %}"
+                                    alt="">
+                            </li>
+
+
+                            <li>
+                                <div class="image_title">
+                                    <a href="#">Puneet Sagar Abhiyan</a>
+                                </div>
+                                <img src="{% static 'assets/img/Puneet_Sagar_Abhiyan_2023-6-17-11-32-38.jpg' %}" alt="">
+                            </li>
+
+
+                            <li>
+                                <div class="image_title">
+                                    <a href="#">Research scholars day</a>
+                                </div>
+                                <img src="{% static 'assets/img/Research_scholars_day_2023-6-17-11-6-24.jpg' %}" alt="">
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Campus Life Section -->
+
+    <!-- Start Social media Section -->
+    <section class="nit-section">
+        <div class="container">
+            <div class="socialmedia_nitw">
+                <div class="row header-row">
+                    <div class="col-lg-12">
+                        <h1 class="section_heading">Join the Conversation on Social Media</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p><i class="fa fa-twitter icon-padding" aria-hidden="true"></i> Latest campus news and info <a
+                                href="#"><i class="fa fa-arrow-right arrow-right" aria-hidden="true"></i></a></p>
+                        <p><i class="fa fa-instagram icon-padding" aria-hidden="true"></i> Stunning images from our
+                            gorgeous campus <a href="#"><i class="fa fa-arrow-right arrow-right"
+                                    aria-hidden="true"></i></a></p>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <p><i class="fa fa-facebook icon-padding" aria-hidden="true"></i> A place to share stories,
+                            photos and events <a href="#"><i class="fa fa-arrow-right arrow-right"
+                                    aria-hidden="true"></i></a></p>
+                        <p><i class="fa fa-linkedin icon-padding" aria-hidden="true"></i> Highlight the culture of the
+                            campus with activities and initiatives <a href="#"><i class="fa fa-arrow-right arrow-right"
+                                    aria-hidden="true"></i></a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Social media Section -->
+
+    {% load djangocms_alias_tags %}
+
+    <!-- Start Footer -->
+    <footer class="" id="nitw_footer">
+
+        {% static_alias 'footer' %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 pt-5">
+                    <h2 class="quick_links">Quick links</h2>
+                </div>
+            </div>
+            {% block Footer %}
+            {% placeholder "Footer" %}
+            {% endblock Footer %}
+        </div>
+
+
+        </div>
+
+        <div class="w-100 bottom-footer py-3">
+            <div class="container">
+                <div class="row pt-2">
+
+
+                    <div class="col-md-8 col-12 copyright_section">
+                        <h4 class="text-left ">
+                            National Institute of Technology Warangal
+                        </h4>
+                        <p>Warangal - 506004, Telangana, INDIA</p>
+                    </div>
+
+                    <div class="col-md-4 col-12 me-auto">
+                        <ul class="list-inline text-left footer-icons">
+                            <li class="list-inline-item ">
+                                <a class="text-decoration-none" target="_blank" href="#"><i
+                                        class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                            </li>
+                            <li class="list-inline-item ">
+                                <a class="text-decoration-none" target="_blank" href="#"><i
+                                        class="fab fa-instagram fa-lg fa-fw"></i></a>
+                            </li>
+                            <li class="list-inline-item ">
+                                <a class="text-decoration-none" target="_blank" href="#"><i
+                                        class="fab fa-twitter fa-lg fa-fw"></i></a>
+                            </li>
+                            <li class="list-inline-item ">
+                                <a class="text-decoration-none" target="_blank" href="#"><i
+                                        class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script  -->
+    <script src="{% static 'assets/js/jquery-1.11.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery-migrate-1.2.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/script.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <!-- <script>
+        let count = document.querySelectorAll(".count")
+        let arr = Array.from(count)
+        arr.map(function (item) {
+            let startnumber = 0
+            function counterup() {
+                startnumber++
+                item.innerHTML = startnumber
+                if (startnumber == item.dataset.number) {
+                    clearInterval(stop)
+                }
+            }
+            let stop = setInterval(function () {
+                counterup()
+            }, 50)
+        })
+
+    </script> -->
+    <script>
+        $(document).ready(function () {
+            $("#news-slider").owlCarousel({
+                items: 2,
+                itemsDesktop: [1199, 2],
+                itemsMobile: [600, 1],
+                pagination: true,
+                autoPlay: true
+            });
+
+            $("#news-slider2").owlCarousel({
+                items: 3,
+                itemsDesktop: [1199, 2],
+                itemsDesktopSmall: [980, 2],
+                itemsMobile: [600, 1],
+                pagination: false,
+                navigationText: false,
+                autoPlay: true
+            });
+
+            $("#news-slider3").owlCarousel({
+                items: 3,
+                itemsDesktop: [1199, 2],
+                itemsDesktopSmall: [1000, 2],
+                itemsMobile: [700, 1],
+                pagination: false,
+                navigationText: false,
+                autoPlay: true
+            });
+
+            $("#news-slider4").owlCarousel({
+                items: 3,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [1000, 2],
+                itemsMobile: [600, 1],
+                pagination: false,
+                navigationText: false,
+                autoPlay: true
+            });
+
+            $("#news-slider5").owlCarousel({
+                items: 3,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [1000, 2],
+                itemsMobile: [650, 1],
+                pagination: false,
+                navigationText: false,
+                autoPlay: true
+            });
+
+            $("#news-slider6").owlCarousel({
+                items: 3,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [980, 2],
+                itemsMobile: [600, 1],
+                pagination: false,
+                navigationText: false
+            });
+
+            $("#news-slider7").owlCarousel({
+                items: 3,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [1000, 2],
+                itemsMobile: [650, 1],
+                pagination: false,
+                autoPlay: true
+            });
+
+            $("#news-slider8").owlCarousel({
+                items: 2,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [980, 2],
+                itemsMobile: [600, 1],
+                autoPlay: true
+            });
+
+            $("#news-slider9").owlCarousel({
+                items: 3,
+                itemsDesktop: [1199, 2],
+                itemsDesktopSmall: [980, 2],
+                itemsTablet: [650, 1],
+                pagination: false,
+                navigation: true,
+                navigationText: ["", ""]
+            });
+
+
+
+            $("#news-slider99").owlCarousel({
+                items: 2,
+                itemsDesktop: [1199, 2],
+                itemsDesktopSmall: [980, 2],
+                itemsTablet: [650, 1],
+                pagination: false,
+                navigation: true,
+                navigationText: ["", ""]
+            });
+
+
+            $("#news-slider999").owlCarousel({
+                navigation: false,
+                pagination: true,
+                items: 1,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [980, 2],
+                itemsMobile: [600, 1],
+                navigationText: ["", ""]
+            });
+
+
+            $("#news-slider10").owlCarousel({
+                items: 4,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [980, 2],
+                itemsMobile: [600, 1],
+                navigation: true,
+                navigationText: ["", ""],
+                pagination: true,
+                autoPlay: true
+            });
+
+            $("#news-slider11").owlCarousel({
+                items: 4,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [980, 2],
+                itemsMobile: [600, 1],
+                pagination: true,
+                autoPlay: true
+            });
+
+            $("#news-slider12").owlCarousel({
+                items: 2,
+                itemsDesktop: [1199, 2],
+                itemsDesktopSmall: [980, 1],
+                itemsTablet: [600, 1],
+                itemsMobile: [550, 1],
+                pagination: true,
+                autoPlay: true
+            });
+
+            $("#news-slider13").owlCarousel({
+                navigation: false,
+                pagination: true,
+                items: 2,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [980, 2],
+                itemsMobile: [600, 1],
+                navigationText: ["", ""]
+            });
+
+            $("#news-slider14").owlCarousel({
+                items: 4,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [980, 2],
+                itemsMobile: [550, 1],
+                pagination: false,
+                autoPlay: true
+            });
+        });
+
+    </script>
+
+
+
+    <!-- For Disable the copy option script -->
+    <script>
+        $('body').bind('copy paste cut drag drop', function (e) {
+            e.preventDefault();
+        });
+
+
+        //To prevent right click on website
+        // document.addEventListener('contextmenu', event => event.preventDefault());
+
+        //Prevent Drag and drop option for website images
+        document.addEventListener('dragstart', event => event.preventDefault());
+
+        // Prevent right click option  on images to prevent saving website images
+        $("body").on("contextmenu", "img", function (e) {
+            return false;
+        });
+
+    </script>
+
+
+
+    <!-- End Script -->
+    {% render_block 'js' %}
+</body>
+
+</html>
